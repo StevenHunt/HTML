@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>        
+  
+  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta http-equiv="refresh" content=""> 
+  <meta name="description" content="HTML Basics Tutorial from W3Schools.com">
+  <meta name="author" content="Steven Hunt 2014"> 
+  <meta name="keywords" content="HTML, CSS, Links, Formatting, Tables, Layouts, Forms, Elements">
+  <!-- The <meta> tag provides metadata about the HTML document. Metadata will not be displayed on the screen but will be machine parsable. -->
+  
+  <base></base>
+  <!-- The <base> tag specifies a default address or default target for all links on the page, it trumps all "in tag" destinations and targets -->
+  
+  <style type="text/css"> 
+  body {background-color:#CCCC99}
+  p {color:black;}
+  thead {color:red}
+  tbody {color:green}
+  tfoot {color:blue}
+  </style>
+  <!-- The <style> tag is used to define style information for an HTML document. Inside the <style> element, you specify how HTML elements should render in a browser. -->
+  
+  <title> Title: HTML Cheat Sheet! </title>
+  
+  </head>
+  
+  <body>
+  
+  <p><b> The id attribute: </b> Can be used to creat a bookmark inside an HTML document. </p>
+  <a href="#heading"> Heading section. </a> <br>
+  <a href="#paragraphs"> Paragraph section. </a> <br>
+  <a href="#images"> Images section. </a> <br>
+  <a href="#tables"> Tables section. </a> <br> 
+  <a href="#lists"> Lists section. </a> <br>
+  <a href="#div&span"> Div and Span section. </a> <br>
+  <a href="#container"> Layouts using Div Elements. </a> <br>
+  <a href="#formsandinput"> Forms and Input section. </a> <br>
+  <a href="#iframes"> iframes section. </a> <br> 
+  <a href="#scripts"> Scripts section. </a> <br>
+  <a href="#CharacterEntities"> Character entities section. </a> <br>
+  
+   
+  <br>
+  
+  <a id="heading"> Heading Section with inline style.  </a>
+  
+  <h1 style="background-color:red"> This is a h1 heading with a red background </h1>
+  <h2 style="color:blue"> This is a h2 heading in blue </h2>
+  <h3 style="font-family:arial"> This is a h3 heading in arial </h3>
+  <h4 style="font-size:30px"> This is a h4 heading in 30px </h4>
+  <h5 style="text-align:center"> This is a h5 heading with text align set to center </h5>
+  <h6 style="margin-left:40px"> This is a h6 heading with margin-left set to 40px </h6>
+  
+  <hr> <!-- Horizontal Line -->
+  
+  <!-- This is a comment, they are ignored by the browser and are not displayed -->
+  
+  <a id="paragraphs"> Paragraph section: </a> <br>
+  
+  <p> This is a standard paragraph. </p>
+  <p> This is <br> also another standard <br> paragraph but with line <br> breaks. </p>
+  
+  <a href="http://www.HydrotechMotors.com" > This is a link to Hydrotech Motors. </a>
+  <br>
+  <br>
+  <a href="http://www.HydrotechMotors.com" target="_blank"> This is a link to Hydrotech Motors. The target is set to "_blank", which<br>
+  will make the link open up in a new tab!</a> 
+  
+  <br> <!-- Page break -->
+  <br>
+  
+  <a id="images"><b>Images:</b> Using Images ( Text Align, Maps, Floating.. ) </a>
+  <br>
+  <p> This is text <img src="cat.jpg" alt="Funny Cat" align="middle" width="100" height="100"> align set to center! </p>
+  <!-- Image from the same folder -->
+  <!-- The required <alt> attribute specifies an alternate text for the image, if the image cannot be displayed -->
+  <br>
+  <p><img src="images/cat4.jpg" style="float:right" alt="Funny Cat" align="top" width="100" height="100"> This image is set to align="top" & style="float:right". </p>
+  <!-- Image from anther folder -->
+  <br>
+  <p><b>Image Map: Reddit.com (Yellow) & Slashdot.com (Green) </b></p>
+  <img src="images/MapShapes2.jpg" alt="Square and Circle" usemap="#mapshapes">
+  <map name="mapshapes">
+  <area shape="circle" coords="58,64,30" alt="Circle" href="http://www.reddit.com" target="_blank">
+  <area shape="rect" coords="117,37,164,90" alt="square" href="http://www.slashdot.com" target="_blank">
+  </map>
+  
+  
+  
+  <!-- An image map is an image with clickable areas -->
+  <br>
+  
+  <p><b> This text is bold </b></p>
+  <p><i> This text is italic </i></p>
+  <p><strong> This text is strong </strong></p>
+  <p><em> This text is ephasized </em></p>
+  <p><code> This is computer output </code></p>
+  <p> This is a <sub> subscript </sub>, and this is a <sup> superscript </sup></p>
+  
+  <!-- Today, all majors browsers renders strong as bold and em as italics -->
+  
+  <p><b> The Pre tag </b> Used for displaying computer code: </p>
+  <pre> 
+  This is preformatted  text. 
+  It preserves      both spaces
+  and line
+  breaks. 
+  </pre>
+  
+  <p><b> Note: </b> These tags are often used to display computer/programming codes. </p>
+  
+  <code> Computer Code </code>
+  <br>
+  <var> Computer Variable </var>
+  <br>
+  <kbd> Keyboard Input </kbd>
+  <br>
+  <samp> Sample Text </samp>
+  
+  <br>
+
+  <p><b> The Address tag: </b> To define contact information for the author/owner of an HTML document. </p>
+  <address>
+  Steven C. Hunt <br>
+  3851 Kauai Drive <br>
+  San Jose, CA. , 95111 <br>
+  <a href="mailto:steven.c.hunt@gmail.com"> Email me </a>
+  </address>
+  
+  <br>
+  
+  <p><b> The Abbriviation tag: </b> How to handle abbreviations and accronyms. </p>
+  <p> More people prefer <abbr title="Auto Union Deutschland Ingolstadt"> AUDI</abbr>, over <abbr title="Bavarian Motor Works"> BMW </abbr></p>
+  
+  <br>
+  
+  <p><b> Bi-Directional Override (BDO): </b> The next line will be written from the right to left (rtl).</p>
+  <bdo dir="rtl"> Here is some Hebrew text. </bdo>
+  
+  <br>
+  <br>
+  
+  <p><b> The Blockquote tag: </b> Specifies a section that is quoted from another source. </p>
+  <p> Here is a quote from Hydrotech Motors website:</p>
+  <Blockquote cite="www.hydrotechmotors.com">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non eros elit. Pellentesque pretium <br>
+  augue rhoncus enim ornare consectetur. Suspendisse facilisis fermentum aliquam. Maecenas pharetra <br>
+  egestas magna, et convallis diam interdum vitae. Sed turpis odio, semper vitae tempus vitae, facilisis <br>
+  quis tellus. Vivamus ultricies aliquet pulvinar. Mauris sit amet turpis neque, eu congue mauris.
+  </blockquote>
+  </p>
+  
+  <br>
+  
+  <p><b> The q tag: </b> Defines a short quotation.</p>
+  <p> Hydrotech Motor's goals is to:
+  <q>Vivamus ultricies aliquet pulvinar. Mauris sit amet turpis neque, eu congue mauris.</q>
+  </p>
+  
+  <br>
+  
+  <p><b> Deleted and Inserted Text: </b> The browser will strikethrough deleted text and underline insertet text. </p>
+  <p> The car is <del>red</del> <ins>blue!</ins></p>
+  
+  <br>
+  
+  <p><b> Image as a Link: </b> Using an image as a link, with and without a border. </p>
+  
+  <p> Image with a border ( Link to Hydrotech Motors ) <a href="http://www.hydrotechmotors.com" title="To Hydrotech Motors" target="_blank" alt="Hydrotech Motors"><img src="cat2.jpg" alt="Funny Cat" height="100" width="100"></a></p>
+  
+  <br>
+  
+  <p> Image without a border ( Link to Hydrotech Motors ) <a href="http://www.hydrotechmotors.com" title="To Hydrotech Motors" target="_blank" alt="Hydrotech Motors"><img src="cat3.jpg" alt="Funny Cat" border="0" height="100" width="100"></a></p>
+  
+  <br>
+  
+  <p><b> Locked in a Frame: </b> When locked in a frame, use target="_top" </p>
+  <a href="http://www.hydrotechmotors.com" target="_top" > Click here if your locked in a frame </a> 
+
+  <br>
+  
+  <p><b> Email Link: </b> How to create an email link with subject ( Use %20 as spaces )</p>
+  <a href="mailto:Steven.c.hunt@mgail.com?subject=Hello%20Again!"> Click here to email me! </a>
+  
+  <br> 
+  
+  <p> This is another mailto link, sending it to multiple emails: </p>
+  <a href="mailto:Steven.c.hunt@gmail.com?cc=Mycraigslists408@gmail.com&subject=Notice%20I'm%20sending%20this%20to%20both%20of%20you!"> Click here to email us! </a>
+  
+  <br>
+  <br>
+  
+  <a id="tables"> Tables Section </a> 
+  <br>
+  
+  <p><b> One Column: </b> Border = 3 </p>
+  <table border="3"> 
+  <caption> Caption </caption> 
+  <tr> 
+	<th> Header 1 </th> 
+  </tr>
+  <tr>
+	<td> 100 </td> 
+  </tr> 
+  </table> 
+  <br>
+  <p><b> One Row, Three Columns: </b> Border = 0 </p>
+  <table border=""0>
+  <caption> This is a caption </caption> 
+  <tr>
+	<th> Header 1 </th>
+	<th> Header 2 </th> 
+	<th> Header 3 </th> 
+</tr>
+  <tr>  
+	<td> 100 </td> 
+	<td> 200 </td> 
+	<td> 300 </td> 
+  </tr> 
+  </table> 
+  <br> 
+  <p><b> Two Rows, Three Columns: </b> Border = 1 </p>
+  <table border="1">   
+  <caption> This is a caption </caption> 
+  <thead>
+  <tr>
+	<th> Header 1 </th>
+	<th> Header 2 </th> 
+  </tr>
+f	<th> Header 3 </th> 
+  </thead>
+  <tbody>  
+  <tr>
+	<td> 100 </td> 
+	<td> 200 </td> 
+	<td> 300 </td> 
+  </tr> 
+  </tbody>
+  <tfoot>
+  <tr> 
+	<td> 400 </td> 
+	<td> 500 </td> 
+	<td> 600 </td> 
+  </tr> 
+  </tfoot>
+  </table> 
+  <br>
+  <p><b> Three Rows, Five Columns, Vertical Headers: </b> Border = 1 </p>
+  <table border="1">
+  <caption> This is a caption </caption>
+  <colgroup> 
+	<col style="background-color:white;">
+  </colgroup> 
+  <tr>
+	<th> Header 1 </th> 
+	<td> 100 </td> 
+	<td> 200 </td> 
+	<td> 300 </td> 
+	<td> 400 </td> 
+	<td> 500 </td> 
+  </tr>
+  <tr>
+	<th> Header 2 </th>
+	<td> 600 </td>
+    <td> 700 </td> 
+	<td> 800 </td> 
+	<td> 900 </td> 
+	<td> 1000 </td>
+  </tr> 	
+  <tr> 
+	<th> Header 3 </th> 
+	<td> 1100 </td> 
+	<td> 1200 </td> 
+	<td> 1300 </td> 
+	<td> 1400 </td> 
+	<td> 1500 </td> 
+  </tr> 
+  </table> 
+  <br>
+  <p><b> Cell that spans two columns: </b></p>
+  <table border="1">
+  <tr>
+	<th> Name </th>
+	<th colspan="2"> Telephone </th>
+  </tr>
+  <tr>
+    <td> Lindsay O </td> 
+	<td> 1324567 </td> 
+	<td> 2345678 </td> 
+  </tr> 
+  </table> 
+  <br> 
+  <p><b> Cell that spans two rows: </b></p> 
+  <table border="1"> 
+  <tr> 
+	<th> Name </th>
+	<td> Lindsay O </td> 
+  </tr> 
+  <tr> 
+	<th rowspan="2"> Telephone </th> 
+	<td> 1234567 </td>
+  </tr> 
+  <tr>   
+	<td> 2346578 </td> 
+  </tr> 
+  </table> 
+  <br> 
+  <p><b> Cell Padding: </b></p>
+  <table border="1" cellpadding="20">
+  <tr>
+	<td> 20 padding </td> 
+  </tr> 
+  </table> 
+  <br> 
+  <p><b> Cell Spacing </b></p>
+  <table border="1" cellspacing="10">
+  <tr> 
+	<td> First </td>
+	<td> Row </td> 
+  </tr> 
+  <tr> 
+	<td> Second </td> 
+	<td> Row </td> 
+  </tr> 	
+  </table> 
+  
+  <br> 
+  
+  <a id="lists"> Lists Section: </a> 
+ 
+  <p><b> Ordered List Types: </b> Blank or 1 = Number, A = Uppercase, a = lowercase, I = Uppercase Roman, i = Lowercase Roman. </p>
+  <ol type="A">
+	<li> Uppercase Letters </li>
+  </ol>
+  <ol type="a">
+	<li> Lowercase Letters </li>
+  </ol> 
+  <ol type="I">
+	<li> Uppercase Romans </li>
+  </ol>
+  <ol type="i">  
+	<li> Lowercase Romans </li>
+  </ol>
+  <ol> 
+    <li> Numbers </li> 
+  </ol> 	
+ 
+ <br>
+ 
+ <p><b> Unordered List Types: </b> Disk, Circle, Square. 
+ <ul style="list-style-type:disk">
+	<li> Disk </li> 
+ </ul>
+ <ul style="list-style-type:circle">
+	<li> Circle </li>
+ </ul>
+ <ul style="list-style-type:square">
+	<li> Square </li>
+ </ul>
+ 
+ <br>
+ 
+ <p><b> Nested Lists: </b></p>
+ <ul style="list-style-type:square">
+	<li> Audi: </li> 
+		<ol style="1">
+			<li> S4 </li> 
+			<li> R8 </li> 
+			<li> TT </li> 
+			<li> A5 </li> 
+			<li> Q5 </li> 
+		</ol>
+	<li> BMW: </li> 
+		<ol style="1">
+			<li> M3 </li> 
+			<li> M5 </li> 
+			<li> 335i </li> 
+			<li> 525li </li> 
+			<li> 730is </li>
+		</ol>	
+ </ul>
+ 
+ <br>
+ 
+ <p><b> Definition List: </b></p>
+ <dl>
+ <dt> Coffee </dt>
+	<dd> - Black hot drink. </dd> 
+ <dt> Milk </dt> 
+	<dd> - White cold drink. </dd> 
+ </dl> 
+ 
+ <br>
+ 
+ <a id="div&span"><b> Div and Span Section: </b> When used together with CSS, these elements can be used to set style attributes to large blocks of contecnt and parts of the text. </a>
+ <h3> This is an h3 heading outside the div element. </h3>
+ <div style="color:blue">
+	<h3> This h3 heading is in a div element. </h3>
+	<p> This is a paragraph in the same div element, but because I have my p:style set to black in the head section, it trumps the inline style.  </p>
+	<ul style="list-style-type:disk">
+		<li> This list is </li> 
+			<ul style="list-style-type:circle">
+				<li> all in the </li> 
+					<ul style="list-style-type:square">
+						<li>  same div.</li> 
+    </ul> 
+  </div> 
+		
+  <p> My mother has <span style="color:brown; font-weight:bold;"> brown </span> eyes and my dad has <span style="color:blue; font-weight:bold;"> blue </span> eyes. </p>
+  
+  <br> 
+  
+  <hr>
+  <br>
+  
+  <div id="container" style="width:1000px">
+  
+  <div id="header" style="background-color:Green;">
+  <h1 style="margin-bottom:0;"> Main title of webpage! </h1>
+  </div> 
+  <div id="menu" style="background-color:lightgreen;height:400px;width:150px;float:left;">
+  <b> Sports </b> <br> <br>
+  NFL <br>
+  NHL <br>
+  NBA <br>
+  MLB <br>
+  </div> 
+  <div id="content" style="background-color:#EEEEEE;height:400px;width:850px;float:left;">
+  Content goes here..
+  </div>
+  <div id="footer" style="background-color:green;clear:both;text-align:center">
+  This is the footer. 
+  </div> 
+  
+  <br>
+  <hr>
+  <br>
+  
+  <a id="formsandinput"><b> Forms and input elements: </b> Are used to pass data to a server. </a>
+  <br>
+  <br>
+  
+  <form name="input" action="Destination.asp" method="get">
+  <fieldset>
+  <legend> Sign in information </legend>
+  Username: <input type="text" name="user" size="30"><br>
+  Password: <input type="password" name="password" size="30"><br>
+  <input type="submit" value="Submit">
+  </fieldset>
+  </form> 
+  
+  <!-- Form input type="password" makes the characters in that specific field masked --> 
+ 
+  <br>
+  
+  <form action="">
+  <input type="button" value="Don't Press This!">
+  </form>
+  
+  <br>
+   
+  <p><b> Radio buttons and checkboxes: </b> Radio buttons let a user select ONLY 1 of a limited number of choices and a checkbox allows a user to select ZERO or MORE options. </p> 
+  <br>
+  <p><b>Which do you prefer?</b></p>
+  <form action="">
+  <input type="radio" name="car" value="Audi"> Audi <br>
+  <input type="radio" name="car" value="BMW"> BMW
+  </form> 
+  
+  <br>
+  
+  <form action="">
+  <input type="checkbox" name="cars" value="Audi"> I've owned an Audi.  <br>
+  <input type="checkbox" name="cars" value="BMW"> I've owned a BMW. <br>
+  <input type="checkbox" name="cars" value="Chevy"> I've owned a Chevy. <br>
+  <input type="checkbox" name="cars" value="Dodge"> I've owned a Dodge. <br>
+  <input type="checkbox" name="cars" value="Ford"> I've owned a Ford. <br>
+  <input type="checkbox" name="cars" value="Honda"> I've owned a Honda. <br>   
+  <input type="checkbox" name="cars" value="Mazda"> I've owned a Mazda. <br>
+  <input type="checkbox" name="cars" value="Scion"> I've owned a Scion. <br>
+  <input type="checkbox" name="cars" value="Toyota"> I've owned a Toyota. <br>
+  <input type="checkbox" name="cars" value="Volkswagen"> I've owned a Volkswagen. <br>
+  </form> 
+
+  <br> 
+
+  <p><b> Drop down list: </b> For pre selected value, add selected after value! Also for standard list, remove OptGroup. </p>  
+  <form action="">
+  <select name="cars">
+  <optgroup label="German Cars">  
+	<option value="Audi"> Audi </option>
+	<option value="BMW"> BMW </option>
+  </optgroup>
+  <optgroup label="Japanese Cars">  
+	<option value="Lexus"> Lexus </option>
+	<option value="Porsche"> Infinity </option> 
+  </optgroup>
+  </select>
+  </form>
+  
+  <br>
+  
+  <p><b> Text Area: </b> Defines an input field where users can write an infinate number of characters. </p>
+  <textarea rows="10" cols="30"> 
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut porttitor augue. Sed lacus est, porta
+  et hendrerit a, vulputate in mi. Praesent nisi ipsum, faucibus varius porta sed, molestie in urna.
+  Praesent volutpat, nisl quis porta mollis, odio lacus porttitor lacus, ac condimentum ipsum nisl sed arcu. 
+  Sed commodo diam id nunc ultrices eu bibendum nisi pretium. In dignissim felis ac dui suscipit vel 
+  imperdiet augue luctus. Mauris nisl orci, tristique eget vehicula at, tempus malesuada ligula. Praesent 
+  eu neque nunc. Duis tincidunt dolor cursus ipsum dignissim in ultricies lorem vestibulum. Maecenas mi nisl, 
+  mattis sit amet fermentum eget, imperdiet eget enim. Nulla dignissim, leo et commodo fringilla, risus 
+  ligula mattis odio, non vehicula augue mi vel mauris. 
+  </textarea>
+  
+  <br>
+    
+  <p><b> Send email to: Steven.C.Hunt@gmail.com </b></p>
+  
+  
+  <form action="MAILTO:Steven.c.hunt@gmail.com" method="post" enctype="text/plain">
+  Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="name" value="First and last name"> <br>
+  Email Address:       <input type="text" name="mail" value="Your email address"> <br>
+  Comment: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="comment" value="Your comment" size="80"> <br>
+  <br>
+  <input type="submit" value="Send">
+  <input type="reset" value="Reset">
+  </form>
+  
+  <br>
+  
+  <p><b> HTML Output for Attribute: </b> Performs a calculation and shows the result in an OUTPUT element.</p>
+  <h3> Addition Calculator </h3>
+  <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  <input type="range" name="a"> +
+  <input type="number" name="b">=
+  <output name="x" for="a b"></output> 
+  </form> 
+  
+  <br>
+  
+  <p><b> Data List: </b> An INPUT element with pre-defined values in a DATALIST.</p> 
+  <form action="desination.asp" method="get">
+  <input list="cars" name="cars"> 
+  <datalist id="cars"> 
+	<option value="Acura">
+	<option value="BMW">
+	<option value="Chevy">
+	<option value="Dodge">
+	<option value="Toyota">
+	<option value="Volkswagen">
+  </datalist>	
+  <input type="submit">
+  </form>
+  
+  <br>
+  
+  <p><b> Keygen tag: </b> Specifies a key-pair generator field used for forms. </p>
+  <form action="demo_keygen.asp" method="get">
+   Username: <input type="text" name="usr_name">
+   Encryption: <keygen name="security"> 
+   <input type="submit"> 
+  </form> 
+  
+  <br>
+   
+  <a id="iframes"> <b> iFrames: </b> Used to display a webpage within a webpage. </a> 
+  <br>
+  <iframe src="http://www.hydrotechmotors.com" frameborder="0"></iframe>
+  <!-- Frameborder set to 0 for no border --> 
+  
+  <br> 
+  <br>
+  <br>
+  
+  <iframe src="http://www.google.com" name="iframe_a" width="200" height="200"></iframe>
+  <p><a href="http://www.fark.com" target="iframe_a"> FARK </a></p>
+  
+  <br>
+  <br>
+  
+  <a id="scripts"><b> HTML Scripts: </b> Used to define a client-side script, such as JavaScript. </a> 
+  <!-- The <script> element either contains scripting statements or it points to an external script file through the src attribute. -->
+  <br>
+  <br>
+  <script>
+  document.write("Hello World!")  
+  </script>
+  <br> 
+  <p><b> NoScript tag: </b> Is used to provide alternate content for users that have disable scripts in their browser or have a browser that doesn't support client-side scripting. </p> 
+  <script>
+  document.write("Hello World!")
+  </script>
+  <noscript> Sorry your browser doesn't support JavaScript. </noscript>
+  <!-- A browser without support for JavaScript, will display the text in the <noscript> element -->
+  <br> 
+  <script>
+  document.write("<h3> This is an h3 heading written in JavaScript</h3>")
+  document.write("<p> This is a paragraph written in JavaScript</p>")
+  </script>
+  <br>
+  <p id="demo"> Javascript can react to events. Like a click of a button! </p>
+  <script> 
+  function myFunction ()
+  {
+  document.getElementById("demo").innerHTML="Hello JavaScript!";
+  }
+  </script>
+  <button type="button" onclick="myFunction()"> Click Me! </button>
+  <br>
+  
+  <p id="colordemo"> JavaScript can change the style of an HTML element. </p>
+  <script> 
+  function myFunction1 ()
+  {
+  x=document.getElementById("colordemo") // Find the element 
+  x.style.color="#ff0000";               // Change the style
+  }
+  </script>
+  <button type="button" onclick="myFunction1()"> Click Me! </button>
+  <br>
+  <br>
+  
+  <a id="CharacterEntities"><b> Character Entities: </b> To display reserved characters in HTML. </a>
+  <br> 
+  <ul style="list-style-type:disk">
+	<li> Non-breaking Space: &nbsp; </li> 
+	<li> Less than: &lt; </li> 
+	<li> Greater than: &gt; </li> 
+	<li> Ampersand: &amp; </li>
+	<li> Copyright: &copy; </li> 
+	<li> Registered Trademark: &reg; </li>
+	<li> Trademark: &trade; </li>
+  </ul>
+  <p> For a full list of HTML Entities <a href="http://w3schools.com/tags/ref_entities.asp" target="_blank"> Click here! </a>  </p>
+  <br>
+  
+  <a id="urlencode"><b><abbr title="Universal Resource Locator">URL</abbr> Encoder: </b> Another word for a web address, which can either be composed of words or an <abbr title="Internet Protocol">IP</abbr> Address. </a>
+  <!-- Web browsers request pages from web servers by using a URL. -->
+  <br>
+  <p><b> Snytax Rules: </b> Scheme://host.domain:port/path/filename </p>
+  
+  <p>Explination:</p>
+  <ul style="list-style-type:disk">
+	<li> <b> Scheme </b> - Type of internet service. The most common is http. </li> 
+	<li> <b> Host </b> - Domain host. The default for http is www. </li> 
+	<li> <b> Domain </b> - Internet domain name. ex. hydrotechmotors.com </li> 
+	<li> <b> :Port </b> - Port number at the host. The default for http is 80. </li> 
+	<li> <b> Path </b> - Path at the server. If the path is omitted, the document must be stored at the root directory of the website. </li> 
+	<li> <b> Filename </b> - Name of the document/resource. </li> 
+  </ul> 
+  <p> Common URL Schemes </p>
+  <ul style="list-stlye-type:disk"> 
+	<li><b><abbr title="Hyper Text Transfer Protocol"> http </abbr></b>: Common web pages start http:// ( Not ecrypted ) </li>
+	<li><b><abbr title="Secure Hyper Text Transfer Protocol"> http </abbr></b>: Secure web pages. All information exchanged are encrypted. </li>
+	<li><b><abbr title="File Transfer Protocol"> ftp </abbr></b>: For downloading of uploading files to a website. Useful for domain maintenance. </li> 
+  </ul> 
+ 
+  </body>
+
+</html>
