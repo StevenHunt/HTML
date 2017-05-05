@@ -1,50 +1,103 @@
 <!DOCTYPE html>
-<html>
-  
   <head>        
   
-  <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <![endif]-->
+  
+  <!-- Same in HTML4 --> 
   <meta http-equiv="refresh" content=""> 
   <meta name="description" content="Completed HTML Basics Tutorial from W3Schools.com">
   <meta name="author" content="Steven Hunt 2014"> 
   <meta name="keywords" content="HTML, CSS, Links, Formatting, Tables, Layouts, Forms, Elements">
   <!-- The <meta> tag provides metadata about the HTML document. Metadata will not be displayed on the screen but will be machine parsable. -->
   
-  <base></base>
+  <base> </base>
   <!-- The <base> tag specifies a default address or default target for all links on the page, it trumps all "in tag" destinations and targets -->
   
-  <style type="text/css"> 
-  body {background-color:#CCCC99}
-  p {color:black;}
+
+  <style>
+  div.lorem { color: blue }
+  div.paraExample { color: #ec700b}      
+  div.stPara { color: white}
+  body {background-color:#dfd8d8}
   thead {color:red}
   tbody {color:green}
   tfoot {color:blue}
-  </style>
+  h3 {color:red}
+      
+  #div1, #div2 { 
+    margin 10px; 
+    width: 275px;
+    height: 90px;
+    padding: 10px;
+    border: 2px solid black;
+    }
+      
+  foobar {
+	display: block; 
+	background-color:white; 
+	padding: 50px; 
+	font-size: 20px; 
+	color: green; 
+	}
+      
+  a:hover {color: yellow}
+  </style> 
   <!-- The <style> tag is used to define style information for an HTML document. Inside the <style> element, you specify how HTML elements should render in a browser. -->
+
+  <!-- Used for drag and drop : --> 
+  <script>
+  function allowDrop(ev) {
+    ev.preventDefault();
+  }
+
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+
+  function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+  </script>
   
-  <title> Title: HTML Cheat Sheet! </title>
-  
+  <title> HTML Tutorial </title> <!-- Will be displayed in browser tab -->  
+ 
+
   </head>
   
   <body>
-  
+
+  <h1> HTML : Hyper Text Markup Language </h1> 
+
+  <foobar> This is done in the foobar style </foobar> 
+
+  <nav> <!-- Where all navigation links are located --> 
   <p><b> The id attribute: </b> Can be used to creat a bookmark inside an HTML document. </p>
-  <a href="#heading"> Heading section. </a> <br>
-  <a href="#paragraphs"> Paragraph section. </a> <br>
-  <a href="#images"> Images section. </a> <br>
-  <a href="#tables"> Tables section. </a> <br> 
-  <a href="#lists"> Lists section. </a> <br>
-  <a href="#div&span"> Div and Span section. </a> <br>
-  <a href="#container"> Layouts using Div Elements. </a> <br>
-  <a href="#formsandinput"> Forms and Input section. </a> <br>
-  <a href="#iframes"> iframes section. </a> <br> 
-  <a href="#scripts"> Scripts section. </a> <br>
-  <a href="#CharacterEntities"> Character entities section. </a> <br>
-  
-   
+  <a href="#heading"> 1. Heading section. </a> <br>
+  <a href="#paragraphs"> 2. Paragraph section. </a> <br>
+  <a href="#images"> 3. Images section. </a> <br>
+  <a href="#formatting"> 4. Formatting. </a> <br> 
+  <a href="#links"> 5. Links. </a> <br>
+  <a href="#tables"> 6. Tables section. </a> <br> 
+  <a href="#lists"> 7. Lists section. </a> <br>
+  <a href="#div&span"> 8. Div and Span section. </a> <br>
+  <a href="#formsandinput"> 9. Forms and Input section. </a> <br>
+  <a href="#HTML5"> 10. HTML5 Elements. </a> <br> 
+  <a href="#graphics"> 11. Graphics. </a> <br> 
+  <a href="#media"> 12. Media. </a> <br> 
+  <a href="#api"> 13. APIs. </a> <br> 
+
+ </nav> 
+
   <br>
   
-  <a id="heading"> Heading Section with inline style.  </a>
+  <section> 
+  <h3> 1. Heading Section with inline style.  </h3> 
   
   <h1 style="background-color:red"> This is a h1 heading with a red background </h1>
   <h2 style="color:blue"> This is a h2 heading in blue </h2>
@@ -52,45 +105,72 @@
   <h4 style="font-size:30px"> This is a h4 heading in 30px </h4>
   <h5 style="text-align:center"> This is a h5 heading with text align set to center </h5>
   <h6 style="margin-left:40px"> This is a h6 heading with margin-left set to 40px </h6>
-  
+  </section> 
+
   <hr> <!-- Horizontal Line -->
   
   <!-- This is a comment, they are ignored by the browser and are not displayed -->
   
-  <a id="paragraphs"> Paragraph section: </a> <br>
+  <!------------------------------------ PARAGRAPHS ----------------------------------------> 
+  <header> <!-- Specifies a header for a document or section --> 
+  <h3 id="paragraphs" >2. Paragraph section : </h3> <br>
+  </header> 
   
-  <p> This is a standard paragraph. </p>
-  <p> This is <br> also another standard <br> paragraph but with line <br> breaks. </p>
+  <article> 
+  <section>
+  <h4> Standard Paragraph </h4>
+  <div class="lorem">  
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam felis purus, ornare suscipit ornare sed, interdum sed quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed id suscipit nibh, non vestibulum augue. Nulla quis dolor sapien. Cras in justo diam. Mauris vel cursus tellus. Morbi neque eros, tincidunt vel sodales nec, imperdiet ac leo. <div class='stPara'>Cras sed lobortis justo. Phasellus porttitor sapien ut iaculis ultricies. Pellentesque convallis nisl nec arcu eleifend, ut pharetra massa ullamcorper. Donec nec efficitur enim. Quisque consectetur non lectus quis faucibus. Etiam sed quam eget quam commodo efficitur. </div> Duis at felis eu mauris sagittis mattis at vitae sem. Morbi in diam faucibus, gravida purus id, molestie est. Duis rutrum ullamcorper elit, et fermentum est pulvinar at. </p> 
+  </div>
+  </section>
+
+
+<br> 
+
+  <h4> Paragraph with page breaks </h4> 
+  <div class="lorem"> 
+ <p> Suspendisse sem sapien, mollis eget imperdiet posuere, commodo id ante. Vestibulum tortor <br>  eros, faucibus ut tellus vitae, congue placerat nunc. Nulla facilisi. Donec sit amet <br> euismod velit, ut vehicula nunc. Donec efficitur neque eget urna luctus, id finibus massa dictum.<br>  Nam sed viverra diam. Vivamus placerat dui nec lorem maximus hendrerit. Cras tempus, <br>  justo a condimentum sollicitudin, orci orci molestie velit, et malesuada risus enim at magna. <br>  Vivamus sed accumsan sem. Donec nunc lectus, varius nec posuere id, convallis et quam. Proin ac tincidunt ex, posuere porttitor massa.
+</div> 
+      </article>
+      </section>      
   
-  <a href="http://www.HydrotechMotors.com" > This is a link to Hydrotech Motors. </a>
+<br> <!-- Page break -->
+
+  <!-------------------------------------- IMAGES  ----------------------------------------> 
+ 
+  <section id='images'> 
+  <h3>3. Images : </h3> 
   <br>
-  <br>
-  <a href="http://www.HydrotechMotors.com" target="_blank"> This is a link to Hydrotech Motors. The target is set to "_blank", which<br>
-  will make the link open up in a new tab!</a> 
-  
-  <br> <!-- Page break -->
-  <br>
-  
-  <a id="images"><b>Images:</b> Using Images ( Text Align, Maps, Floating.. ) </a>
-  <br>
-  <p> This is text <img src="cat.jpg" alt="Funny Cat" align="middle" width="100" height="100"> align set to center! </p>
-  <!-- Image from the same folder -->
+  <p> This is text <img src="Images/Fallout1.png" alt="Fallout" align="middle" width="100" height="100"> align set to center! </p>
   <!-- The required <alt> attribute specifies an alternate text for the image, if the image cannot be displayed -->
   <br>
-  <p><img src="images/cat4.jpg" style="float:right" alt="Funny Cat" align="top" width="100" height="100"> This image is set to align="top" & style="float:right". </p>
+  <p><img src="/home/steven/Desktop/Coding/HTML/Images/Fallout3.png" style="float:right" alt="Fallout" align="top" width="100" height="100"> This image is set to align="top" & style="float:right". </p>
   <!-- Image from anther folder -->
   <br>
-  <p><b>Image Map: Reddit.com (Yellow) & Slashdot.com (Green) </b></p>
-  <img src="images/MapShapes2.jpg" alt="Square and Circle" usemap="#mapshapes">
-  <map name="mapshapes">
-  <area shape="circle" coords="58,64,30" alt="Circle" href="http://www.reddit.com" target="_blank">
-  <area shape="rect" coords="117,37,164,90" alt="square" href="http://www.slashdot.com" target="_blank">
-  </map>
+  <p><b>Image Map:</b> Each character links to a different search engine.</p>
+  <img src="Images/Fallout_Link.png" alt="Fallout" usemap="#fallout" width='200' height='100' border='1px' >
+  <map name="fallout">
+  <area shape="rect" coords="10,10,60,100" alt="Robot" href="http://www.google.com" target='_blank'>
+  <area shape="rect" coords="120,20,200,100" alt="Mercury" href="http://www.yahoo.com" target='_blank'>
+</map>
+ <p> <b> Using &lt;figure>  & &lt;figcaption> : </b> </p> 
+ <figure> 
+ <img src='Images/falloutLarge.png' alt='Fallout 4' width='100' height='100'> 
+ <figcaption> Fig 1 : Fallout 4 </figcaption> 
+ </figure> 
+
+  <p><b> Image as a Link: </b> Using an image as a link, with and without a border. </p>
   
+  <p> Image with a border ( Link to Google ) <a href="http://www.google.com" title="To Google" target="_blank" alt="Google"><img src="Images/Fallout4.png" alt="Fallout" height="100" width="100" border='4px'></a></p>
   
-  
-  <!-- An image map is an image with clickable areas -->
   <br>
+  
+  <p> Image without a border ( Link to Google ) <a href="http://www.google.com" title="To Google" target="_blank" alt="Hydrotech Motors"><img src="Images/Fallout6.jpg" alt="Fallout" border="0" height="100" width="100"></a></p>
+  </section> 
+  <!------------------------------ FORMATTING  --------------------------------> 
+  <br>
+  <section id='formatting'> 
+  <h3> 4. Formatting :</h3>    
   
   <p><b> This text is bold </b></p>
   <p><i> This text is italic </i></p>
@@ -137,25 +217,24 @@
   <br>
   
   <p><b> Bi-Directional Override (BDO): </b> The next line will be written from the right to left (rtl).</p>
-  <bdo dir="rtl"> Here is some Hebrew text. </bdo>
+  <bdo dir="rtl">Here is some random text </bdo>
   
   <br>
   <br>
   
   <p><b> The Blockquote tag: </b> Specifies a section that is quoted from another source. </p>
-  <p> Here is a quote from Hydrotech Motors website:</p>
-  <Blockquote cite="www.hydrotechmotors.com">
+  <p> Here is a quote from CNN:</p>
+  <Blockquote cite="www.cnn.com">
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam non eros elit. Pellentesque pretium <br>
   augue rhoncus enim ornare consectetur. Suspendisse facilisis fermentum aliquam. Maecenas pharetra <br>
   egestas magna, et convallis diam interdum vitae. Sed turpis odio, semper vitae tempus vitae, facilisis <br>
   quis tellus. Vivamus ultricies aliquet pulvinar. Mauris sit amet turpis neque, eu congue mauris.
-  </blockquote>
-  </p>
+  </Blockquote>
   
   <br>
   
   <p><b> The q tag: </b> Defines a short quotation.</p>
-  <p> Hydrotech Motor's goals is to:
+  <p> Google does:
   <q>Vivamus ultricies aliquet pulvinar. Mauris sit amet turpis neque, eu congue mauris.</q>
   </p>
   
@@ -163,21 +242,49 @@
   
   <p><b> Deleted and Inserted Text: </b> The browser will strikethrough deleted text and underline insertet text. </p>
   <p> The car is <del>red</del> <ins>blue!</ins></p>
-  
+  <p id="CharacterEntities"><b> Character Entities: </b> To display reserved characters in HTML. </p>
+  <br> 
+
+  <ul style="list-style-type:disk">
+	<li> Non-breaking Space: &nbsp; </li> 
+	<li> Less than: &lt; </li> 
+	<li> Greater than: &gt; </li> 
+	<li> Ampersand: &amp; </li>
+	<li> Copyright: &copy; </li> 
+	<li> Registered Trademark: &reg; </li>
+	<li> Trademark: &trade; </li>
+  </ul>
   <br>
   
-  <p><b> Image as a Link: </b> Using an image as a link, with and without a border. </p>
-  
-  <p> Image with a border ( Link to Hydrotech Motors ) <a href="http://www.hydrotechmotors.com" title="To Hydrotech Motors" target="_blank" alt="Hydrotech Motors"><img src="cat2.jpg" alt="Funny Cat" height="100" width="100"></a></p>
-  
+  <p id="urlencode"><b><abbr title="Universal Resource Locator">URL</abbr> Encoder: </b> Another word for a web address, which can either be composed of words or an <abbr title="Internet Protocol">IP</abbr> Address. </p>
+  <!-- Web browsers request pages from web servers by using a URL. -->
   <br>
+  <p><b> Snytax Rules: </b> Scheme://host.domain:port/path/filename </p>
   
-  <p> Image without a border ( Link to Hydrotech Motors ) <a href="http://www.hydrotechmotors.com" title="To Hydrotech Motors" target="_blank" alt="Hydrotech Motors"><img src="cat3.jpg" alt="Funny Cat" border="0" height="100" width="100"></a></p>
-  
+  <p>Explination:</p>
+  <ul style="list-style-type:disk">
+	<li> <b> Scheme </b> - Type of internet service. The most common is http. </li> 
+	<li> <b> Host </b> - Domain host. The default for http is www. </li> 
+	<li> <b> Domain </b> - Internet domain name. ex. google.com </li> 
+	<li> <b> :Port </b> - Port number at the host. The default for http is 80. </li> 
+	<li> <b> Path </b> - Path at the server. If the path is omitted, the document must be stored at the root directory of the website. </li> 
+	<li> <b> Filename </b> - Name of the document/resource. </li> 
+  </ul> 
+  <p> Common URL Schemes </p>
+  <ul style="list-stlye-type:disk"> 
+	<li><b><abbr title="Hyper Text Transfer Protocol"> http </abbr></b>: Common web pages start http:// ( Not ecrypted ) </li>
+	<li><b><abbr title="Secure Hyper Text Transfer Protocol"> http </abbr></b>: Secure web pages. All information exchanged are encrypted. </li>
+	<li><b><abbr title="File Transfer Protocol"> ftp </abbr></b>: For downloading of uploading files to a website. Useful for domain maintenance. </li> 
+  </ul> 
   <br>
+  </section> 
   
+  <!---------------------------------------- LINKS  ------------------------------------------> 
+
+  <section id='links' class='links'> 
+  <h3> 5. Links :</h3> 
   <p><b> Locked in a Frame: </b> When locked in a frame, use target="_top" </p>
-  <a href="http://www.hydrotechmotors.com" target="_top" > Click here if your locked in a frame </a> 
+  <a href="http://www.google.com" target="_top" > Click here if your locked in a frame </a> 
 
   <br>
   
@@ -189,11 +296,17 @@
   <p> This is another mailto link, sending it to multiple emails: </p>
   <a href="mailto:Steven.c.hunt@gmail.com?cc=Mycraigslists408@gmail.com&subject=Notice%20I'm%20sending%20this%20to%20both%20of%20you!"> Click here to email us! </a>
   
+  <a href="http://www.google.com" > This is a link to Google. </a>
   <br>
   <br>
-  
-  <a id="tables"> Tables Section </a> 
+  <a href="http://www.google.com" target="_blank"> This is a link to Google. The target is set to "_blank", which<br>
+  will make the link open up in a new tab!</a> 
   <br>
+  <br>
+  </section>  
+  <!----------------------------------- TABLES ---------------------------------------------> 
+  <section id="tables"> 
+  <h3> 6. Tables Section : </h3> 
   
   <p><b> One Column: </b> Border = 3 </p>
   <table border="3"> 
@@ -229,7 +342,7 @@
 	<th> Header 1 </th>
 	<th> Header 2 </th> 
   </tr>
-f	<th> Header 3 </th> 
+	<th> Header 3 </th> 
   </thead>
   <tbody>  
   <tr>
@@ -327,8 +440,10 @@ f	<th> Header 3 </th>
   </table> 
   
   <br> 
-  
-  <a id="lists"> Lists Section: </a> 
+  </section> 
+ <!----------------------------------- LISTS -------------------------------------> 
+  <section id="lists"> 
+  <h3> 7. Lists Section: </h3> 
  
   <p><b> Ordered List Types: </b> Blank or 1 = Number, A = Uppercase, a = lowercase, I = Uppercase Roman, i = Lowercase Roman. </p>
   <ol type="A">
@@ -348,7 +463,7 @@ f	<th> Header 3 </th>
   </ol> 	
  
  <br>
- 
+      
  <p><b> Unordered List Types: </b> Disk, Circle, Square. 
  <ul style="list-style-type:disk">
 	<li> Disk </li> 
@@ -393,74 +508,94 @@ f	<th> Header 3 </th>
  </dl> 
  
  <br>
- 
- <a id="div&span"><b> Div and Span Section: </b> When used together with CSS, these elements can be used to set style attributes to large blocks of contecnt and parts of the text. </a>
- <h3> This is an h3 heading outside the div element. </h3>
+ </section>  
+ <!----------------------------------- DIV AND SPAN ------------------------------------> 
+ <section id="div&span">
+ <h3> 8. Div and Span Section : </h3> 
+ <p> When used together with CSS, these elements can be used to set style attributes to large blocks(div) of contecnt and parts of the text(span). </p>
+ <h4> This is an h4 heading outside the div element. </h4>
  <div style="color:blue">
-	<h3> This h3 heading is in a div element. </h3>
-	<p> This is a paragraph in the same div element, but because I have my p:style set to black in the head section, it trumps the inline style.  </p>
+	<h4> This h4 heading is in a div element. </h4>
+	<div class='paraExample'> This is a paragraph in the same div element, but because I have paraExample set to orange in the &lt;style>, it trumps the inline style.  </div>
 	<ul style="list-style-type:disk">
 		<li> This list is </li> 
 			<ul style="list-style-type:circle">
 				<li> all in the </li> 
 					<ul style="list-style-type:square">
 						<li>  same div.</li> 
-    </ul> 
+    </ul>
   </div> 
-		
-  <p> My mother has <span style="color:brown; font-weight:bold;"> brown </span> eyes and my dad has <span style="color:blue; font-weight:bold;"> blue </span> eyes. </p>
   
+  <p> This is an example <span style="color:brown; font-weight:bold;">of using </span>the &lt;span> element. It is often used as a<span style="color:blue; font-weight:bold;"> container for some </span> text. </p>
+
+  <!-- A browser without support for JavaScript, will display the text in the <noscript> element -->
+
   <br> 
+  </section> 
+  <!----------------------------------- FORM AND INPUT -----------------------------------> 
+  <section id="formsandinput">
+  <h3> 9. Forms and input elements:  Are used to pass data to a server. </h3>
+  <p><a href="https://www.w3schools.com/html/html_form_elements.asp" target="_blank">  A full list of all form elements for HTML5 </a> </p> 
+
+  <form action="http://google.com" autocomplete='on' id='form99'> <!-- Autocomplete remembers the fields --> 
+  type = text   : <input type='text' name='somename'> <br> <!-- One line text input field -->
+  type = password : <input type='password'> <br> <!-- Characters in field are shown as asterisks -->   
+  type = submit : <input type="submit" value='display'> <br> <!-- Provides a button for submitting form data to a form-handler --> 
+  type = reset : <input type='reset'> <br> <!-- Resets all values in <form> to their default values. --> 
+  type = radio  : <input type='radio'> <br> <!-- Radio buttons -->
+  type = checkbox : <input type='checkbox'> <br> <!-- Check box--> 
+  type = button : <input type='button' onclick='alert("Hello World")' value='Click'> <br> <!-- Button with onclick option set to alert.  -->  
+  type = color : <input type='color'> <br> <!-- Color picker--> 
+  type = date : <input type='date'> <br> <!-- Date field --> 
+  type = email : <input type='email'> <br> <!-- Email field --> 
+  type = number : <input type='number' min='1' max='5'> <br> <!-- Numbers range --> 
+  type = search : <input type='search' name='googlesearch'> <br> <!-- Search field -->
+  type = file (multiple set) : <input type='file' multiple> <!-- Select files -->  
+  </form> 
+  <p> <a href='https://www.w3schools.com/html/html_form_input_types.asp' target="_blank"> A full list of HTML5 Input Types. </a></p>  
+
+ <form autocomplete='on'> 
+ attribute = value :  <input type='text' value='default value'> <br> <!-- Default value --> 
+ attribute = readonly : <input type='text' name='firstname' value='steven' readonly> <br> <!-- Default value cannot be changed. Will be sent when form is submitted.  --> 
+ attribute = readonly & size : <input type='text' name='firstname' value='steven' size='30' disabled> <br> <!-- Will not be sent when submitting the form -->  
+ attribute = maxlength :<input type='text' maxlength='5'> <br> <!-- Sets max length of chars --> 
+ attribute = autofocus : <input type='text'> <br> <!-- cursor will be set to here on load --> 
+ attribute = form : <input type='text' form='form99'> <br> <!-- This input belongs to form99 --> 
+ attribute = pattern (3 digit country code, ie USA): <input type='text' pattern="[A-Za-z]{3}" title="Three letter country code"> <br> <!-- If input doesn't match pattern, it will throw an error --> 
+ attribute = placeholder : <input type='text' placeholder='firstname'> <br> <!-- Watermarks what needs to be inputed in the field --> 
+ attribute = required : <input type='text' required> <br> <!-- Does not let you submit without this field completed -->  
+
+<input type='submit' value='test'> 
+</form> 
+
+ <br> 
+ <br> 
+  <!-- 
+  Action: Action to be performed when the form is submitted, address where to submit (action='/action_page.php')
+  Method: HTTP method to submit. 
+     - Post: Sensative or personal material. Doesn't display data in the page address field.  
+     - Get (default) : Will be visable in the page address field. 
+  Nonvalidate: Browswer shouldn't valid the form. 
+  Autocomplete: Specifies if the browser should autocomplete the form. 
+  Target: Specifies the target of the address of teh action (_self is default)
+  Name: <input name="" > Must have this in order to be submitted. 
+  --> 
+  <form name="input" action="destination.php" method="get">
   
-  <hr>
-  <br>
-  
-  <div id="container" style="width:1000px">
-  
-  <div id="header" style="background-color:Green;">
-  <h1 style="margin-bottom:0;"> Main title of webpage! </h1>
-  </div> 
-  <div id="menu" style="background-color:lightgreen;height:400px;width:150px;float:left;">
-  <b> Sports </b> <br> <br>
-  NFL <br>
-  NHL <br>
-  NBA <br>
-  MLB <br>
-  </div> 
-  <div id="content" style="background-color:#EEEEEE;height:400px;width:850px;float:left;">
-  Content goes here..
-  </div>
-  <div id="footer" style="background-color:green;clear:both;text-align:center">
-  This is the footer. 
-  </div> 
-  
-  <br>
-  <hr>
-  <br>
-  
-  <a id="formsandinput"><b> Forms and input elements: </b> Are used to pass data to a server. </a>
-  <br>
-  <br>
-  
-  <form name="input" action="Destination.asp" method="get">
-  <fieldset>
-  <legend> Sign in information </legend>
+  <fieldset> <!-- Group related data in a form --> 
+  <legend> Sign in information </legend> <!-- Defines a caption for the fieldset --> 
   Username: <input type="text" name="user" size="30"><br>
   Password: <input type="password" name="password" size="30"><br>
+  <input type='checkbox'> Check to agree to terms of service. <br> 
   <input type="submit" value="Submit">
+  <input type='reset'> 
   </fieldset>
   </form> 
   
   <!-- Form input type="password" makes the characters in that specific field masked --> 
  
   <br>
-  
-  <form action="">
-  <input type="button" value="Don't Press This!">
-  </form>
-  
-  <br>
-   
+  <!----------------------------------- RADIO AND CHECKBOXES ------------------------------> 
   <p><b> Radio buttons and checkboxes: </b> Radio buttons let a user select ONLY 1 of a limited number of choices and a checkbox allows a user to select ZERO or MORE options. </p> 
   <br>
   <p><b>Which do you prefer?</b></p>
@@ -485,75 +620,43 @@ f	<th> Header 3 </th>
   </form> 
 
   <br> 
-
-  <p><b> Drop down list: </b> For pre selected value, add selected after value! Also for standard list, remove OptGroup. </p>  
+  <!----------------------------------- DROP DOWN BOXES ---------------------------------> 
+  <p><b> &lt;select> : </b> Drop down list </p>
   <form action="">
-  <select name="cars">
-  <optgroup label="German Cars">  
+  <select name="cars"> 
+  <optgroup label="German Cars">  <!-- Puts options in groups -->
 	<option value="Audi"> Audi </option>
 	<option value="BMW"> BMW </option>
   </optgroup>
   <optgroup label="Japanese Cars">  
-	<option value="Lexus"> Lexus </option>
+	<option value="Lexus" selected> Lexus </option> <!-- selected (preselects a value) -->
 	<option value="Porsche"> Infinity </option> 
   </optgroup>
   </select>
   </form>
-  
+
   <br>
+  <!----------------------------------- HTML5 : Data Lists ------------------------------> 
   
-  <p><b> Text Area: </b> Defines an input field where users can write an infinate number of characters. </p>
-  <textarea rows="10" cols="30"> 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ut porttitor augue. Sed lacus est, porta
-  et hendrerit a, vulputate in mi. Praesent nisi ipsum, faucibus varius porta sed, molestie in urna.
-  Praesent volutpat, nisl quis porta mollis, odio lacus porttitor lacus, ac condimentum ipsum nisl sed arcu. 
-  Sed commodo diam id nunc ultrices eu bibendum nisi pretium. In dignissim felis ac dui suscipit vel 
-  imperdiet augue luctus. Mauris nisl orci, tristique eget vehicula at, tempus malesuada ligula. Praesent 
-  eu neque nunc. Duis tincidunt dolor cursus ipsum dignissim in ultricies lorem vestibulum. Maecenas mi nisl, 
-  mattis sit amet fermentum eget, imperdiet eget enim. Nulla dignissim, leo et commodo fringilla, risus 
-  ligula mattis odio, non vehicula augue mi vel mauris. 
-  </textarea>
-  
-  <br>
-    
-  <p><b> Send email to: Steven.C.Hunt@gmail.com </b></p>
-  
-  
-  <form action="MAILTO:Steven.c.hunt@gmail.com" method="post" enctype="text/plain">
-  Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" name="name" value="First and last name"> <br>
-  Email Address:       <input type="text" name="mail" value="Your email address"> <br>
-  Comment: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="comment" value="Your comment" size="80"> <br>
-  <br>
-  <input type="submit" value="Send">
-  <input type="reset" value="Reset">
-  </form>
-  
-  <br>
-  
-  <p><b> HTML Output for Attribute: </b> Performs a calculation and shows the result in an OUTPUT element.</p>
-  <h3> Addition Calculator </h3>
-  <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
-  <input type="range" name="a"> +
-  <input type="number" name="b">=
-  <output name="x" for="a b"></output> 
+  <p> <b>&lt;datalist> :</b> Predefined options </p> 
+  <form action='/action_page.php'> 
+	<input list="cars" name="cars"> <!-- The list attribute must refer to the datalist id --> 
+	<datalist id='cars'>  
+		<option value="BMW"> 
+		<option value="Audi"> 
+		<option value="VW"> 
+		<option value="Porsche"> 
+		<option value="Subaru">
+	</datalist> 
+	<input type='submit'> 
   </form> 
-  
-  <br>
-  
-  <p><b> Data List: </b> An INPUT element with pre-defined values in a DATALIST.</p> 
-  <form action="desination.asp" method="get">
-  <input list="cars" name="cars"> 
-  <datalist id="cars"> 
-	<option value="Acura">
-	<option value="BMW">
-	<option value="Chevy">
-	<option value="Dodge">
-	<option value="Toyota">
-	<option value="Volkswagen">
-  </datalist>	
-  <input type="submit">
+     
+  <p><b> Text Area: </b> Defines an input field where users can write an infinate number of characters. </p>
+  <form> 
+  <textarea rows="10" cols="30"> 
+  </textarea>
   </form>
-  
+       
   <br>
   
   <p><b> Keygen tag: </b> Specifies a key-pair generator field used for forms. </p>
@@ -564,99 +667,269 @@ f	<th> Header 3 </th>
   </form> 
   
   <br>
-   
-  <a id="iframes"> <b> iFrames: </b> Used to display a webpage within a webpage. </a> 
-  <br>
-  <iframe src="http://www.hydrotechmotors.com" frameborder="0"></iframe>
-  <!-- Frameborder set to 0 for no border --> 
-  
-  <br> 
-  <br>
-  <br>
-  
-  <iframe src="http://www.google.com" name="iframe_a" width="200" height="200"></iframe>
-  <p><a href="http://www.fark.com" target="iframe_a"> FARK </a></p>
-  
-  <br>
-  <br>
-  
-  <a id="scripts"><b> HTML Scripts: </b> Used to define a client-side script, such as JavaScript. </a> 
-  <!-- The <script> element either contains scripting statements or it points to an external script file through the src attribute. -->
-  <br>
-  <br>
-  <script>
-  document.write("Hello World!")  
-  </script>
-  <br> 
-  <p><b> NoScript tag: </b> Is used to provide alternate content for users that have disable scripts in their browser or have a browser that doesn't support client-side scripting. </p> 
-  <script>
-  document.write("Hello World!")
-  </script>
-  <noscript> Sorry your browser doesn't support JavaScript. </noscript>
-  <!-- A browser without support for JavaScript, will display the text in the <noscript> element -->
-  <br> 
-  <script>
-  document.write("<h3> This is an h3 heading written in JavaScript</h3>")
-  document.write("<p> This is a paragraph written in JavaScript</p>")
-  </script>
-  <br>
-  <p id="demo"> Javascript can react to events. Like a click of a button! </p>
-  <script> 
-  function myFunction ()
-  {
-  document.getElementById("demo").innerHTML="Hello JavaScript!";
-  }
-  </script>
-  <button type="button" onclick="myFunction()"> Click Me! </button>
-  <br>
-  
-  <p id="colordemo"> JavaScript can change the style of an HTML element. </p>
-  <script> 
-  function myFunction1 ()
-  {
-  x=document.getElementById("colordemo") // Find the element 
-  x.style.color="#ff0000";               // Change the style
-  }
-  </script>
-  <button type="button" onclick="myFunction1()"> Click Me! </button>
-  <br>
-  <br>
-  
-  <a id="CharacterEntities"><b> Character Entities: </b> To display reserved characters in HTML. </a>
-  <br> 
-  <ul style="list-style-type:disk">
-	<li> Non-breaking Space: &nbsp; </li> 
-	<li> Less than: &lt; </li> 
-	<li> Greater than: &gt; </li> 
-	<li> Ampersand: &amp; </li>
-	<li> Copyright: &copy; </li> 
-	<li> Registered Trademark: &reg; </li>
-	<li> Trademark: &trade; </li>
-  </ul>
-  <p> For a full list of HTML Entities <a href="http://w3schools.com/tags/ref_entities.asp" target="_blank"> Click here! </a>  </p>
-  <br>
-  
-  <a id="urlencode"><b><abbr title="Universal Resource Locator">URL</abbr> Encoder: </b> Another word for a web address, which can either be composed of words or an <abbr title="Internet Protocol">IP</abbr> Address. </a>
-  <!-- Web browsers request pages from web servers by using a URL. -->
-  <br>
-  <p><b> Snytax Rules: </b> Scheme://host.domain:port/path/filename </p>
-  
-  <p>Explination:</p>
-  <ul style="list-style-type:disk">
-	<li> <b> Scheme </b> - Type of internet service. The most common is http. </li> 
-	<li> <b> Host </b> - Domain host. The default for http is www. </li> 
-	<li> <b> Domain </b> - Internet domain name. ex. hydrotechmotors.com </li> 
-	<li> <b> :Port </b> - Port number at the host. The default for http is 80. </li> 
-	<li> <b> Path </b> - Path at the server. If the path is omitted, the document must be stored at the root directory of the website. </li> 
-	<li> <b> Filename </b> - Name of the document/resource. </li> 
-  </ul> 
-  <p> Common URL Schemes </p>
-  <ul style="list-stlye-type:disk"> 
-	<li><b><abbr title="Hyper Text Transfer Protocol"> http </abbr></b>: Common web pages start http:// ( Not ecrypted ) </li>
-	<li><b><abbr title="Secure Hyper Text Transfer Protocol"> http </abbr></b>: Secure web pages. All information exchanged are encrypted. </li>
-	<li><b><abbr title="File Transfer Protocol"> ftp </abbr></b>: For downloading of uploading files to a website. Useful for domain maintenance. </li> 
-  </ul> 
- 
-  </body>
+        
+  <p><b> HTML Output for Attribute: </b> Performs a calculation and shows the result in an OUTPUT element.</p>
+  <h4> Addition Calculator </h4>
+  <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  <input type="range" name="a"> +
+  <input type="number" name="b">=
+  <output name="x" for="a b"></output> 
+  </form> 
+ </section> 
+ <br> 
+ <!------------------------- HTML5 : New Elements ------------------------->   
 
-</html>
+ <section id='HTML5'>
+ <h3> 10. HTML5 Elements : </h3> 
+ <a href="https://www.w3schools.com/html/html5_new_elements.asp" taret='_blank'> Full list of HTML5 Attributes </a> <br> 
+ <a href="https://www.w3schools.com/tags/default.asp" target="_blank"> Full list of HTML5 Elements </a> <br> 
+ <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank"> Full list of HTML5 Semantic Elements </a> <br> 
+
+  </section>
+     
+ <br> 
+ <!------------------------- HTML5 : Graphics ------------------------->   
+
+ <article id='graphics'> 
+ <h3> 11. Graphics : </h3>    
+ 
+ <h4>&lt;canvas> : </h4>    
+ <canvas id='myCanvas' width='200' height='100' style='border:1px solid black;'>
+ Your browser does not support HTML5    
+ </canvas>
+ <br> 
+ <a href='https://www.w3schools.com/graphics/canvas_intro.asp' target="_blank"> Full list about HTML Canvas</a>
+ 
+ <script> 
+ var c = document.getElementById("myCanvas");
+ var ctx = c.getContext("2d");
+ ctx.beginPath();
+ ctx.arc(95,50,40,0,2*Math.PI);
+ ctx.stroke();
+ </script>
+     
+ <section>
+ <h4> &lt;svg> - Scalable Vector Graphics: </h4>
+ <svg width='400' height='180'> <rect x='50' y='20' rx='20' ry='20' width='150' height='150' style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/> Sorry, your browser does not support inline SVG. </svg> 
+ <br> 
+ <a href='https://www.w3schools.com/graphics/svg_intro.asp' target='_blank'> Full list about HTML SVG</a>
+ </section>
+     
+ <section> 
+ <h4> Google Maps :  </h4>
+ <div id="googleMap" style="width:400px;height:400px;background:yellow"></div>
+
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(47.774948, -122.265953),
+    zoom:10,
+
+    // mapTypeId: google.maps.MapTypeId.HYBRID (Uncomment to make the map Hybrid)
+}
+var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAttBVmWDag_Yc7dueb7eppPmtQG43t-8c&callback=myMap"></script>
+ 
+ <a href='https://www.w3schools.com/graphics/google_maps_intro.asp' target='_blank'> Full list about HTML Google Maps</a> <br> 
+ <a href='https://console.developers.google.com/apis/' taret='_blank'> List of Google APIs </a>
+ </section>
+ <!------------------------- HTML5 : Media  ------------------------->   
+ <section id='media'> 
+ <h3> 12. Media : </h3>
+     
+ <article> 
+ <section> 
+ <h4> Video : </h4>
+     
+ <video width='300' height='240' controls> <!-- Add autoplay, to play automatically when page loads --> 
+    <source src='Video/movie.mp4' type='video/mp4'>
+    <source src='Video/movie.ogg' type='video/ogg'> 
+     
+     Your browser does not support the video tag. 
+     
+ </video>
+ <br>      
+ <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video_js_prop" target="_blank"> Using JavaScript as Control Buttons </a>     
+ </section>
+ 
+ <section>
+ <h4> Audio : </h4>     
+ 
+ <audio controls> 
+    <source src='Audio/13Reasons.mp3' type='audio/ogg'> 
+    <source src='Audio/13Reasons.mp3' type='audio/mpeg'> 
+     
+     Your browser does not support the audio element. 
+     
+ </audio>    
+ </section>
+ 
+ <section> 
+ <h4> Plug-ins : Using &lt;object> or &lt;embed> </h4>
+     
+ <object data='Images/FalloutObject.png'> </object>
+ <embed src='Images/FalloutObject.png'> 
+ </section>
+     
+ <section>
+ <h4> Youtube Videos : </h4>
+     
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/5WOUKJSXftI" frameborder="0" allowfullscreen></iframe> <br> <!-- Autoplay : ?autoplay=1; -->
+ <a href='https://www.w3schools.com/html/html_youtube.asp' target="_blank"> Full list of HTML Youtube controls </a>
+ </section>
+ 
+ <br> 
+ <br> 
+ <a href="https://www.w3schools.com/html/html_media.asp" target='_blank'> Full list of HTML media formats </a>     
+ </article>     
+ <br>
+     
+  <!------------------------- HTML5 : APIs  ------------------------->   
+ <article id='api'> 
+ <h3> 13. APIs : </h3>
+ <section> 
+ <h4>Geolocation : </h4>
+ <p> Not supported with Chromium 50+ (must be secured HTTPS). </p>
+ 
+ <button onclick="getLocation()">Try It</button>
+
+<p id="geoLoc"> </p>
+
+<script>
+var x = document.getElementById("geoLoc");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+     
+ <a href='https://www.w3schools.com/html/html5_geolocation.asp' target="_blank"> Full list of Geographic Location Settings </a>
+ </section> 
+     
+<section> 
+<h4> Drag and Drop : </h4>     
+<!-- #div1 stylized in internal CSS at the top of the file --> 
+<img id="drag1" src="Images/FalloutDrag.png" draggable="true" ondragstart="drag(event)" width="275" height="80">
+<br>  
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br> 
+</section>     
+<br>
+
+<section> 
+<h4> Local Storage : </h4>
+
+<p id='locStorage'> </p>    
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+    // Store
+    localStorage.setItem("lastname", "Hunt");
+    // Retrieve
+    document.getElementById('locStorage').innerHTML = 'Lastname is stored locally : ' + localStorage.getItem("lastname");
+} else {
+    document.getElementById('locStorage').innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+    
+function clickCounter() {
+    if (typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount) + 1; 
+        }
+        else {
+            localStorage.clickcount = 1; 
+        }
+        document.getElementById('clicker').innerHTML = 'You have clicked the button ' + localStorage.clickcount + " times overall. ";
+    }
+        else {
+            document.getElementById('clicker').innerHTML = "Sorry, your browser does not support Web Storage... "
+        }
+}
+    
+function clickCounter2() {
+    if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1; 
+        }
+        else {
+            sessionStorage.clickcount = 1; 
+        }
+        document.getElementById('clicker2').innerHTML = 'You have clicked the button ' + sessionStorage.clickcount + " times this session. ";
+    }
+        else {
+            document.getElementById('clicker2').innerHTML = "Sorry, your browser does not support Web Storage... "
+        }
+}
+</script>
+    
+<button type='button' onclick='clickCounter()'>  Local </button>
+<button type='button' onclick='clickCounter2()'> Session </button>
+<p id='clicker'> </p>
+<p id='clicker2'> </p>
+    
+</section>
+<br>      
+ <section>      
+ <h4> Web Worker : </h4>
+ <p> A Web Worker is a JavaScript running in the background, without affecting the performance of the page. </p>
+
+<script>
+var w;
+
+function startWorker() {
+    if(typeof(Worker) !== "undefined") {
+        if(typeof(w) == "undefined") {
+            w = new Worker("JavaScript/web_worker.js");
+        }
+        w.onmessage = function(event) {
+            document.getElementById("ww").innerHTML = event.data;
+        };
+    } else {
+        document.getElementById("ww").innerHTML = "Sorry, your browser does not support Web Workers...";
+    }
+}
+
+function stopWorker() { 
+    w.terminate();
+    w = undefined;
+}
+</script>
+<button onclick="startWorker()">Start</button> 
+<button onclick="stopWorker()">Stop</button>
+<p>Count numbers: <output id="ww"></output></p>
+
+ </section>
+ </article>
+  <br>
+     
+ <section> 
+ <h4> SSE - Server Sent Event : </h4>
+ <p> When a webpage automatically gets updates from a server. </p>
+     <a href='https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_sse' target="_blank"> Example of SSE with W3 </a> 
+ </section>
+ <br> 
+ <br> 
+  <!-------------------------- FOOTER --------------------------------> 
+  <footer> 
+	<hr> 
+        <p> In the &lt;footer> </p> 
+	<p> Posted by : Steven Hunt. </p> 
+	<p> Contact Information : <a href='mailto:Steven.c.hunt@gmail.com'> Steven.C.Hunt@gmail.com </a>. </p> 
+	<p> &copy; All Rights Reserved. </p> 
+  </footer> 
+  </body>
+</html> 
