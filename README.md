@@ -1,3 +1,3 @@
 # HTML5
 
-HypertREA
+Hypertext Markup Language
