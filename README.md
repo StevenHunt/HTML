@@ -1,3 +1,5 @@
 # HTML5
 
-Hypertext Markup Language
+Hypertext Markup Language References: 
+
+File Extension: .html
