@@ -204,8 +204,8 @@
   <p><b> The Address tag: </b> To define contact information for the author/owner of an HTML document. </p>
   <address>
   Steven C. Hunt <br>
-  3851 Kauai Drive <br>
-  San Jose, CA. , 95111 <br>
+  123 Main St <br>
+  San Jose, CA. , 95123 <br>
   <a href="mailto:steven.c.hunt@gmail.com"> Email me </a>
   </address>
   
