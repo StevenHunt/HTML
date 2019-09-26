@@ -1,5 +1,4 @@
 # HTML5
 
-Hypertext Markup Language References: 
+Going through HTML 5 Tutorial via W3 Schools: https://www.w3schools.com/html/default.asp
 
-File Extension: .html
